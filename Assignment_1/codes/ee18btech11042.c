@@ -45,8 +45,8 @@ double complex* ifft(double complex* y, int n){
         odd[i] = y[(2*i)+1];
         
     }
-    double complex* y_even =fft(even,n/2);
-    double complex* y_odd = fft(odd,n/2);
+    double complex* y_even =ifft(even,n/2);
+    double complex* y_odd = ifft(odd,n/2);
     double complex* x1 = malloc((n)*sizeof(double complex));
     for(i=0;i<n/2;i++){
         double w_imag = sin(-2*PI*i/n);
